@@ -136,3 +136,5 @@ REST_FRAMEWORK = {
     )
 }
 
+AUTH_USER_MODELS = 'accounts.User'
+
