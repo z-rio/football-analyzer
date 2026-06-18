@@ -21,6 +21,7 @@ class ClubSerializer(serializers.ModelSerializer):
         fields = ['id', 'club_name', 'registration_number', 'county']
 
 
+
 class PlayerProfileSerializer(serializers.ModelSerializer):
 
     class Meta:
@@ -81,3 +82,14 @@ class CustomMatchSerializer(serializers.ModelSerializer):
         if home_team == away_team:
             raise serializers.ValidationError("A team cannot play a match against itself.")
         return data
+
+class UserVerificationSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['status']
+
+    def validate_status(self, value):
+
+        if value not in [User.Status.ACTIVE, User.Status.SUSPENDED]:
+            raise serializers.ValidationError("Admin can only set status to ACTIVE or SUSPENDED.")
+        return value

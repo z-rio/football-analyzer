@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'rest_framework_simplejwt.token_blacklist',
     'corsheaders',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -136,5 +137,5 @@ REST_FRAMEWORK = {
     )
 }
 
-AUTH_USER_MODELS = 'accounts.User'
+AUTH_USER_MODEL = 'accounts.User'
 
