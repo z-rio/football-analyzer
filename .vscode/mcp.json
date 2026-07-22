@@ -1,0 +1,9 @@
+{
+	"servers": {
+		"opentelemetry-docs": {
+			"type": "http",
+			"url": "https://opentelemetry.mcp.kapa.ai"
+		}
+	},
+	"inputs": []
+}

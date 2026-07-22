@@ -117,7 +117,7 @@ class PlayerProfile(TimeStampModel):
     position = models.CharField(max_length=50, blank=True) 
 
     def __str__(self): 
-        f"{self.user.email} - {self.team.team_name}"
+        return f"{self.user.email} - {self.team.team_name}"
 
 class Match(TimeStampModel):
     home_team = models.ForeignKey(
